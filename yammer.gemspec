@@ -15,7 +15,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency 'faraday', '~> 0.6.1'
   gem.add_runtime_dependency 'faraday_middleware', '~> 0.6.3'
   gem.add_runtime_dependency 'multi_json', '~> 1.0.0'
-  gem.add_runtime_dependency 'multi_xml', '~> 0.2.0'
+  gem.add_runtime_dependency 'multi_xml', '~> 0.4.4'
   gem.add_runtime_dependency 'simple_oauth', '~> 0.1.5'
   gem.authors = ["Bruno Mattarollo"]
   gem.description = %q{A Ruby wrapper for the Yammer REST API}
