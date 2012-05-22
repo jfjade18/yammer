@@ -10,3 +10,4 @@ doc/*
 log/*
 pkg/*
 example.rb
+.idea
