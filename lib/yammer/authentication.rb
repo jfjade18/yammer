@@ -10,8 +10,7 @@ module Yammer
       {
         :consumer_key => consumer_key,
         :consumer_secret => consumer_secret,
-        :token => oauth_token,
-        :token_secret => oauth_token_secret,
+        :token => oauth_token
       }
     end
 
