@@ -7,6 +7,7 @@ module Yammer
     # Require client method modules after initializing the Client class in
     # order to avoid a superclass mismatch error, allowing those modules to be
     # Client-namespaced.
+    require 'yammer/client/activities'
     require 'yammer/client/messages'
     require 'yammer/client/feed'
     require 'yammer/client/users'
@@ -16,6 +17,7 @@ module Yammer
 
     alias :api_endpoint :endpoint
 
+    include Yammer::Client::Activities
     include Yammer::Client::Messages
     include Yammer::Client::Feed
     include Yammer::Client::Users

@@ -32,10 +32,10 @@ module Yammer
         case format.to_s.downcase
         when 'json'
           builder.use Faraday::Response::Mashify
-          builder.use Faraday::Response::ParseJson
+          builder.use Faraday::Response::ParseJson if parse_response
         when 'xml'
           builder.use Faraday::Response::Mashify
-          builder.use Faraday::Response::ParseXml
+          builder.use Faraday::Response::ParseXml if parse_response
         end
         builder.use Faraday::Response::RaiseHttp5xx
         builder.adapter(adapter)
