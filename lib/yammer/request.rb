@@ -34,7 +34,7 @@ module Yammer
             request.path = formatted_path(path, format)
             request.body = options unless options.empty?
           end
-      end
+        end
         'raw' == format.to_s.downcase ? response : response.body
       rescue MultiJson::DecodeError
         Hashie::Mash.new
