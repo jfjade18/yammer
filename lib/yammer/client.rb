@@ -8,21 +8,23 @@ module Yammer
     # order to avoid a superclass mismatch error, allowing those modules to be
     # Client-namespaced.
     require 'yammer/client/activities'
-    require 'yammer/client/messages'
     require 'yammer/client/feed'
-    require 'yammer/client/users'
+    require 'yammer/client/groups'
+    require 'yammer/client/messages'
+    require 'yammer/client/networks'
     require 'yammer/client/search'
     require 'yammer/client/suggestions'
-    require 'yammer/client/groups'
+    require 'yammer/client/users'
 
     alias :api_endpoint :endpoint
 
     include Yammer::Client::Activities
-    include Yammer::Client::Messages
     include Yammer::Client::Feed
-    include Yammer::Client::Users
+    include Yammer::Client::Groups
+    include Yammer::Client::Messages
+    include Yammer::Client::Networks
     include Yammer::Client::Search
     include Yammer::Client::Suggestions
-    include Yammer::Client::Groups
+    include Yammer::Client::Users
   end
 end
