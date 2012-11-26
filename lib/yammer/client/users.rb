@@ -9,6 +9,10 @@ module Yammer
       def find_by_id(id, options={})
         response = get("users/#{id}", options, :json)
       end
+
+      def current_user(options = {})
+        response = get("users/current", options, :json)
+      end
     end
   end
 end
