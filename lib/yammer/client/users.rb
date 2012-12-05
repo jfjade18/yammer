@@ -40,6 +40,11 @@ module Yammer
       def user(id, options={})
         get("users/#{id}", options)
       end
+
+      def current_user(options = {})
+        response = get("users/current", options, :json)
+      end
+
     end
   end
 end
