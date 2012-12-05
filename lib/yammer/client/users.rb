@@ -18,7 +18,7 @@ module Yammer
       # @example
       #   Yammer.users
       def users(options={})
-        get('users', options, :json)
+        get('users', options)
       end
 
       # View data about one user.
@@ -38,7 +38,7 @@ module Yammer
       # @example
       #   Yammer.user(3866451)
       def user(id, options={})
-        get("users/#{id}", options, :json)
+        get("users/#{id}", options)
       end
     end
   end
