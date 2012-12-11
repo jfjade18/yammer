@@ -13,7 +13,8 @@ module Yammer
           activity: {
             actor: {
               name:  options[:user].name,
-              email: options[:user].email
+              email: options[:user].email,
+              url:   options[:user_url]
             },
             action: options[:action],
             object: {
