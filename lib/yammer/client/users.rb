@@ -42,7 +42,11 @@ module Yammer
       end
 
       def current_user(options = {})
-        response = get("users/current", options, :json)
+        get("users/current", options, :json)
+      end
+
+      def in_group(group_id, options = {})
+        get("users/in_group/#{group_id}")
       end
 
     end
