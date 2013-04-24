@@ -2,11 +2,11 @@ The Yammer Ruby Gem
 ====================
 A Ruby wrapper for the Yammer REST APIs
 
-[![Build Status](https://secure.travis-ci.org/roadly/yammer.png)][travis]
+[![Build Status](https://travis-ci.org/jfjade18/yammer.png)][travis]
 [![Code Climate](https://codeclimate.com/badge.png)][codeclimate]
 
-[travis]: http://travis-ci.org/roadly/yammer
-[codeclimate]: https://codeclimate.com/github/roadly/yammer
+[travis]: https://travis-ci.org/jfjade18/yammer
+[codeclimate]: https://codeclimate.com/github/jfjade18/yammer
 
 This wrapper is heavily inspired by the [Twitter](https://github.com/jnunemaker/twitter) Ruby Gem (which is AWESOME and you should definitely check)
 
