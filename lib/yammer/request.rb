@@ -36,15 +36,11 @@ module Yammer
           # request.path = formatted_path(path, format)
           # request.body = options unless options.empty?
         end
-      
-      #TODO: format is not obeyed.  From Yam we get back an array of objects
-      response
-      
+        'raw' == format.to_s.downcase ? response : response.body
       rescue MultiJson::DecodeError
         Hashie::Mash.new
       rescue Faraday::Error::ClientError => e
         raise Yammer::ErrorProxy.new(e)
-
       end
     end
 

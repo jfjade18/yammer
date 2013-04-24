@@ -28,6 +28,8 @@ module Faraday
     def error_body(body)
       if body.nil?
         nil
+      elsif body.is_a?(String)
+        body
       elsif body['error']
         ": #{body['error']}"
       elsif body['errors']

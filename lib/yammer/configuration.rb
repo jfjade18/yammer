@@ -8,6 +8,7 @@ module Yammer
       :adapter,
       :endpoint,
       :format,
+      :parse_response,
       :gateway,
       :oauth_token,
       :proxy,
@@ -25,6 +26,9 @@ module Yammer
     #
     # @note JSON is preferred over XML because it is more concise and faster to parse.
     DEFAULT_FORMAT = :json
+
+    # By default, parse the response; otherwise return raw response
+    DEFAULT_PARSE_RESPONSE = true
 
     # By default, don't set a user oauth token
     DEFAULT_OAUTH_TOKEN = nil
@@ -50,6 +54,12 @@ module Yammer
       yield self
     end
 
+    # @return [Boolean]
+    def credentials?
+      credentials.values.all?
+    end
+
+
     # Create a hash of options and their values
     def options
       options = {}
@@ -62,11 +72,26 @@ module Yammer
       self.adapter            = DEFAULT_ADAPTER
       self.endpoint           = DEFAULT_ENDPOINT
       self.format             = DEFAULT_FORMAT
+      self.parse_response     = DEFAULT_PARSE_RESPONSE
       self.oauth_token        = DEFAULT_OAUTH_TOKEN
       self.proxy              = DEFAULT_PROXY
       self.user_agent         = DEFAULT_USER_AGENT
       self.gateway            = DEFAULT_GATEWAY
       self
     end
+
+    private
+
+      # @return [Hash]
+      def credentials
+        {
+          # :consumer_key => @consumer_key,
+          # :consumer_secret => @consumer_secret,
+          # :token => @oauth_token,
+          # :token_secret => @oauth_token_secret
+          oauth_token: @oauth_token
+        }
+      end
+
   end
 end

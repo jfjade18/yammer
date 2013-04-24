@@ -24,6 +24,10 @@ module Yammer
         response = post('messages', options.merge(:body => message))
         format.to_s.downcase == 'xml' ? response['response']['messages'] : response
       end
+
+      def praise(options={})
+        response = get('messages/attachments/13', options, :json)
+      end
     end
   end
 end
