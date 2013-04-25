@@ -24,18 +24,13 @@ describe Yammer do
   describe ".credentials?" do
     it "returns true if all credentials are present" do
       Yammer.configure do |config|
-        config.consumer_key = 'CK'
-        config.consumer_secret = 'CS'
         config.oauth_token = 'OT'
-        config.oauth_token_secret = 'OS'
       end
       Yammer.credentials?.should be_true
     end
     it "returns false if any credentials are missing" do
       Yammer.configure do |config|
-        config.consumer_key = 'CK'
-        config.consumer_secret = 'CS'
-        config.oauth_token = 'OT'
+        config.oauth_token = nil
       end
       Yammer.credentials?.should be_false
     end
