@@ -5,18 +5,12 @@ module Faraday
   # @private
   class Response::RaiseHttp4xx < Response::Middleware
     def on_complete(env)
-      case env[:status].to_i
-      when 400
-        raise Yammer::BadRequest.new(error_message(env), env[:response_headers])
-      when 401
-        raise Yammer::Unauthorized.new(error_message(env), env[:response_headers])
-      when 403
-        raise Yammer::Forbidden.new(error_message(env), env[:response_headers])
-      when 404
-        raise Yammer::NotFound.new(error_message(env), env[:response_headers])
-      when 406
-        raise Yammer::NotAcceptable.new(error_message(env), env[:response_headers])
-      end
+      status = env[:status].to_i
+      raise Yammer::BadRequest.new(error_message(env), env[:response_headers]) if status.eql?(400)
+      raise Yammer::Unauthorized.new(error_message(env), env[:response_headers]) if status.eql?(401)
+      raise Yammer::Forbidden.new(error_message(env), env[:response_headers]) if status.eql?(403)
+      raise Yammer::NotFound.new(error_message(env), env[:response_headers]) if status.eql?(404)
+      raise Yammer::NotAcceptable.new(error_message(env), env[:response_headers]) if status.eql?(406)
     end
 
     private
