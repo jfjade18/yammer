@@ -3,7 +3,7 @@ The Yammer Ruby Gem
 A Ruby wrapper for the Yammer REST APIs
 
 [![Build Status](https://travis-ci.org/jfjade18/yammer.png)][travis]
-[![Code Climate](https://codeclimate.com/badge.png)][codeclimate]
+[![Code Climate](https://codeclimate.com/github/jfjade18/yammer.png)][codeclimate]
 
 [travis]: https://travis-ci.org/jfjade18/yammer
 [codeclimate]: https://codeclimate.com/github/jfjade18/yammer
