@@ -3,15 +3,11 @@ $:.push File.expand_path("../lib", __FILE__)
 require "yammer/version"
 
 Gem::Specification.new do |gem|
-  gem.add_development_dependency 'maruku', '~> 0.6'
-  gem.add_development_dependency 'nokogiri', '~> 1.4'
   gem.add_development_dependency 'rake'
   gem.add_development_dependency 'rspec'
   gem.add_development_dependency 'simplecov'
   gem.add_development_dependency 'timecop'
   gem.add_development_dependency 'webmock'
-  gem.add_development_dependency 'yard', '~> 0.7'
-  gem.add_development_dependency 'ZenTest', '~> 4.5'
   gem.add_runtime_dependency 'yam', '~> 0.0.6'
   gem.authors = ["Bruno Mattarollo, Peter Philips"]
   gem.description = %q{A Ruby wrapper for the Yammer REST API}

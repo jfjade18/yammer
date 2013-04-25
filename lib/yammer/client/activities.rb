@@ -18,7 +18,7 @@ module Yammer
       # @example Creates a new text-type activity for the authenticating user
       #   Yammer.activity('text', :text => 'Created an activity with the Yammer gem.' )
       def activity(activity_type, options={})
-        response = post('activity', { activity: options.merge(:action => activity_type)} )
+        response = post('activity', { :activity => options.merge(:action => activity_type)} )
         format.to_s.downcase == 'xml' ? response['response']['activities'] : response
       end
     end

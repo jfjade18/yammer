@@ -15,7 +15,7 @@ module Yammer
     # @return [Hash]
     def authentication
       {
-        oauth_token: oauth_token
+        :oauth_token => oauth_token
       }
     end
 

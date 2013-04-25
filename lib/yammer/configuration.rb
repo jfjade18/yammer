@@ -89,7 +89,7 @@ module Yammer
           # :consumer_secret => @consumer_secret,
           # :token => @oauth_token,
           # :token_secret => @oauth_token_secret
-          oauth_token: @oauth_token
+          :oauth_token => @oauth_token
         }
       end
 
